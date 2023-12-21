@@ -1,0 +1,262 @@
+Name,Type1,Type2,EggGroup1,EggGroup2
+Slombat,Grass,None,Grass,Mammalian
+Fightoth,Grass,None,Grass,Mammalian
+Gladiargi,Grass,Fighting,Grass,Mammalian
+Calflame,Fire,None,Mammalian,None
+Heiflare,Fire,None,Mammalian,None
+Bulloyd,Fire,Steel,Mammalian,None
+Halbeave,Water,None,Amphibious,Mammalian
+Chisipelt,Water,None,Amphibious,Mammalian
+Hurlobol,Water,Psychic,Amphibious,Mammalian
+Olvaenian Fletchling,Normal,Flying,Flying,None
+Olvaenian Fletchinder,Dark,Flying,Flying,None
+Sinishawk,Dark,Flying,Flying,None
+Flabebe,Fairy,None,Fairy,None
+Floette,Fairy,None,Fairy,None
+Florges,Fairy,None,Fairy,None
+Shinx,Electric,None,Mammalian,None
+Luxio,Electric,None,Mammalian,None
+Luxray,Electric,None,Mammalian,None
+Leorocci,Electric ,Rock,Mammalian,None
+Farfud,Bug,Normal,Insectoid,None
+Farfull ,Bug,Normal,Insectoid,None
+Farfamin,Bug,Dark,Insectoid,None
+Pidove,Normal,Flying,Flying,None
+Tranquill,Normal,Flying,Flying,None
+Unfezant,Normal,Flying,Flying,None
+Arumite,Poison,Bug,Insectoid,None
+Arumurg,Poison,Bug,Insectoid,None
+Olvaenian Cufant,Fighting,Steel,Mammalian,Inorganic
+Olvaenian Copperajah,Fighting,Steel,Mammalian,Inorganic
+Eloxodon,Steel,Dark ,Mammalian,Inorganic
+Mammogang,Fighting,Ice ,Mammalian,Inorganic
+Morelull,Grass,Fairy,Grass,None
+Shiinotic,Poison,Fairy,Grass,None
+Codipuff,Normal,Dark,Flying,None
+Brignolo,Dark,Flying,Flying,None
+Temprano ,Sound,None,Amorphous,None
+Drumpour,Water,Sound,Amorphous,None
+Saxophlogi,Fire,Sound,Amorphous,None
+Oakacello,Grass,Sound,Amorphous,None
+Galviola,Electric,Sound,Amorphous,None
+Olvaenian Woobat,Fairy,Flying,Flying,Mammalian
+Olvaenian Swoobat,Fairy,Flying,Flying,Mammalian
+Teddiursa,Normal,None,Mammalian,None
+Ursuring,Dark,None,Mammalian,None
+Ursaluna,Normal,Ground,Mammalian,None
+Bergmite,Ice,None,Monster,None
+Avalugg,Ice,None,Monster,None
+Hisuian Avalugg,Ice,Rock,Monster,None
+Machop,Fighting,None,Anthropomorphic,None
+Machoke,Fighting,None,Anthropomorphic,None
+Machamp,Fighting,Steel,Anthropomorphic,None
+Whismur,Normal,Sound,Mammalian,Monster
+Loudred,Normal,Sound,Mammalian,Monster
+Exploud,Normal,Sound,Mammalian,Monster
+Sapidato,Water,None,Amphibious,Coastal
+Granchan - Default,Water,None,Amphibious,Coastal
+Granchan - Sword,Water,Fighting,Amphibious,Coastal
+Granchan - Shield,Water,Steel,Amphibious,Coastal
+Paldean Wooper,Ground,Poison,Amphibious,Mammalian
+Clodsire,Ground,Poison,Amphibious,Mammalian
+Fulmarmi,Electric,Ground,Mammalian,Fairy
+Silicobra,Ground,None,Dragon,Mammalian
+Sandaconda,Ground,None,Dragon,Mammalian
+Mime Jr.,Psychic,None,Infertile,None
+Galarian Mr. Mime,Psychic,Ice,Anthropomorphic,None
+Mr. Rime,Psychic,Ice,Anthropomorphic,None
+Olvaenian Ralts,Dark,Fairy,Anthropomorphic,Amorphous
+Olvaenian Kirlia,Dark,Fairy,Anthropomorphic,Amorphous
+Olvaenian Gardevoir,Fairy,Fighting,Anthropomorphic,Amorphous
+Olvaenian Gallade,Dark,Fighting,Anthropomorphic,Amorphous
+Monkyno,Rubber,Fighting,Anthropomorphic,None
+Gonglare,Rubber,Fighting,Anthropomorphic,None
+Theshao,Rubber,Fighting,Anthropomorphic,None
+Abra,Psychic,None,Anthropomorphic,None
+Kadabra,Psychic,None,Anthropomorphic,None
+Alakazam,Psychic,None,Anthropomorphic,None
+Hokuspokus,Psychic,Steel,Anthropomorphic,None
+Ferroseed,Grass,Steel,Inorganic,Grass
+Ferrothorn,Grass,Steel,Inorganic,Grass
+Paldean Tauros - Base,Fighting,None,Mammalian,None
+Paldean Tauros - Aqua,Fighting,Water,Mammalian,None
+Paldean Tauros -  Blaze,Fighting,Fire,Mammalian,None
+Skwovet,Normal,None,Mammalian,None
+Greedent,Normal,Grass,Mammalian,None
+Pawniard,Steel,Dark,Anthropomorphic,None
+Bisharp,Steel,Dark,Anthropomorphic,None
+Kingambit,Steel,Dark,Anthropomorphic,None
+Numel,Fire,Ground,Mammalian,None
+Camerupt,Fire,Ground,Mammalian,None
+Turtonator,Fire,Dragon,Monster,Dragon
+Candlurk,Rubber,Ghost,Inorganic,Amorphous
+Walnero,Grass,Ghost,Grass,Amorphous
+Manglero,Grass,Ghost,Grass,Amorphous
+Bramblin,Grass,Ghost,Grass,None
+Brambleghast,Grass,Ghost,Grass,None
+Lekikub,Electric,None,Mammalian,None
+Noxursa,Poison,Ice,Mammalian,None
+Exeggcute,Grass,Psychic,Grass,None
+Alolan Exeggutor,Grass,Dragon,Grass,None
+Ibescorn,Fire,Dark,Mammalian,None
+Impidimp,Fairy,Dark,Fairy,Anthropomorphic
+Morgrem,Fairy,Dark,Fairy,Anthropomorphic
+Grimmsnarl,Fairy,Dark,Fairy,Anthropomorphic
+Snubbull,Fairy,None,Fairy,Mammalian
+Granbull,Fairy,None,Fairy,Mammalian
+Solorew,Rock,Sound,Mammalian,None
+Shrewduo,Rock,Sound,Mammalian,None
+Topocongo,Rock,Sound,Mammalian,None
+Koffing,Poison,None,Amorphous,None
+Galarian Weezing,Poison,Fairy,Amorphous,None
+Olvaenian Meowth,Normal,Grass,Mammalian,None
+Galarian Meowth,Steel,None,Mammalian,None
+Olvaenian Persian,Normal,Grass,Mammalian,None
+Perrserker,Steel,None,Mammalian,None
+Happiny,Normal,None,Infertile,None
+Chansey,Normal,None,Fairy,None
+Blissey,Normal,None,Fairy,None
+Hisuian Sneasel,Poison,Fighting,Mammalian,None
+Sneasler,Poison,Fighting,Mammalian,None
+Mareanie,Poison,Water,Amphibious,None
+Toxapex,Poison,Water,Amphibious,None
+Maschiff,Dark,None,Mammalian,None
+Mabostiff,Dark,None,Mammalian,None
+Hisiuan Qwilfish,Dark,Poison,Seadwelling,None
+Overqwil,Dark,Poison,Seadwelling,None
+Sandygast,Ghost,Ground,Amorphous,None
+Palossand,Ghost,Ground,Amorphous,None
+Spheal,Ice,Water,Mammalian,Amphibious
+Sealeo,Ice,Water,Mammalian,Amphibious
+Walrein,Ice,Water,Mammalian,Amphibious
+Olvaenian Audino,Fairy,Sound,Fairy,None
+Sewaddle,Bug,Grass,Insectoid,None
+Olvaenian Swadloon,Bug,Rubber,Insectoid,None
+Olvaenian Leavanny,Bug,Rubber,Insectoid,None
+Sizzlipede,Fire,Bug,Insectoid,None
+Centiskorch,Fire,Bug,Insectoid,None
+Alolan Geodude,Rock,Electric,Inorganic,None
+Alolan Graveler,Rock,Electric,Inorganic,None
+Alolan Golem,Rock,Electric,Inorganic,None
+Alolan Rattata,Dark,Normal,Mammalian,None
+Alolan Raticate,Dark,Normal,Mammalian,None
+Dewpider,Water,Bug,Insectoid,Amphibious
+Araquanid,Water,Bug,Insectoid,Amphibious
+Lotad,Grass,Water,Grass,Amphibious
+Lombre,Grass,Water,Grass,Amphibious
+Ludicolo,Grass,Water,Grass,Amphibious
+Honedge,Ghost,Steel,Inorganic,None
+Doublade,Ghost,Steel,Inorganic,None
+Siphox,Ghost,Fighting,Inorganic,None
+Olvaenian Tyrogue,Fighting,Normal,Infertile,None
+Hitmonlee,Fighting,None,Anthropomorphic,None
+Hitmonchan,Fighting,None,Anthropomorphic,None
+Hitmontop,Fighting,None,Anthropomorphic,None
+Hitmondach,Fighting,Ghost,Anthropomorphic,None
+Hitmoncrag,Fighting,Rock,Anthropomorphic,None
+Hitmonwark,Fighting,Ice,Anthropomorphic,None
+Hitmonkloak,Fighting,Psychic,Anthropomorphic,None
+Groum,Fairy,Ground,Fairy,None
+Grockre,Fairy,Ground,Fairy,None
+Galarian Slowpoke,Psychic,None,Amphibious,Monster
+Galarian Slowbro,Psychic,Poison,Amphibious,Monster
+Galarian Slowking,Psychic,Poison,Amphibious,Monster
+Crabrawler,Fighting,None,Coastal,None
+Crabominable,Fighting,Ice,Coastal,None
+Galarian Yamask,Ground,Ghost,Inorganic,Amorphous
+Runerigus,Ground,Ghost,Inorganic,None
+Olvaenian Drifloon,Flying,None,Amorphous,None
+Olvaenian Drifblim,Electric,Flying,Amorphous,None
+Pikipek,Normal,Flying,Flying,None
+Trumbeak,Normal,Flying,Flying,None
+Toucannon,Normal,Flying,Flying,None
+Tarountula,Bug,None,Insectoid,None
+Spidops,Bug,None,Insectoid,None
+Rellor,Bug,None,Insectoid,None
+Rabsca,Bug,Psychic,Insectoid,None
+Gulpin,Poison,None,Amorphous,None
+Swalot,Poison,None,Amorphous,None
+Galarian Farfetch'd,Fighting,None,Flying,Mammalian
+Sirfetch'd,Fighting,None,Flying,Mammalian
+Mankey,Fighting,None,Mammalian,None
+Primeape,Fighting,None,Mammalian,None
+Annihilape,Fighting,Ghost,Mammalian,None
+Oognom,Fairy,Poison,Fairy,None
+Heracross,Bug,Fighting,Insectoid,None
+Scyther,Bug,Flying,Insectoid,None
+Scizor,Bug,Steel,Insectoid,None
+Kleavor,Bug,Rock,Insectoid,None
+Pincurchin,Electric,None,Amphibious,Amorphous
+Grubbin,Bug,None,Insectoid,None
+Charjabug,Bug,Electric,Insectoid,None
+Vikavolt,Bug,Electric,Insectoid,None
+Oranguru,Normal,Psychic,Mammalian,None
+Trapinch,Ground,None,Insectoid,None
+Vibrava,Ground,Dragon,Insectoid,None
+Flygon,Ground,Dragon,Insectoid,None
+Applin,Grass,Dragon,Grass,Dragon
+Flapple,Grass,Dragon,Grass,Dragon
+Appletun,Grass,Dragon,Grass,Dragon
+Fantadmyr,Ghost,None,Inorganic,Amorphous
+Vanspettr,Ghost,Steel,Inorganic,Amorphous
+Bergerph,Ground,Normal,Inorganic,Mammalian
+Lupomasco,Ground,Fighting,Inorganic,Mammalian
+Tandemaus,Normal,None,Mammalian,Fairy
+Maushold,Normal,None,Mammalian,Fairy
+Fantasio,Ghost,Fairy,Fairy,Inorganic
+Lungourd,Grass,Ground,Grass,None
+Stonjourner,Rock,None,Inorganic,None
+Anemonache,Electric,Dark,Seadwelling,Amorphous
+Crabbombom,Water,None,Coastal,Seadwelling
+Ocellgilo - Central,Dragon,Rock,Dragon,Monster
+Ocellgilo - North,Dragon,Ice,Dragon,Monster
+Ocellgilo - South,Dragon,Fire,Dragon,Monster
+Hadrok,Grass,Rock,Grass,Monster
+Tethon,Grass,Rock,Grass,Monster
+Bouldroar,Grass,Rock,Grass,Monster
+Plesil,Water,Rock,Seadwelling,Monster
+Aquiosa,Water,Rock,Seadwelling,Monster
+Rhaetidal,Water,Rock,Seadwelling,Monster
+Tyrunt,Rock,Dragon,Dragon,Monster
+Salantrum,Steel,Dragon,Dragon,Monster
+Amaura,Rock,Ice,Monster,None
+Aurorotitan,Dragon,Ice,Monster,None
+Pescetric,Electric,Water,Flying,None
+Eevee,Normal,None,Mammalian,None
+Flareon,Fire,None,Mammalian,None
+Jolteon,Electric,None,Mammalian,None
+Vaporeon,Water,None,Mammalian,None
+Espeon,Psychic,None,Mammalian,None
+Umbreon,Dark,None,Mammalian,None
+Glaceon,Ice,None,Mammalian,None
+Leafeon,Grass,None,Mammalian,None
+Sylveon,Fairy,None,Mammalian,None
+Larvaeon,Bug,None,Mammalian,None
+Putreon,Poison,None,Mammalian,None
+Olvaenian Bulbasaur,Poison,None,Grass,Monster
+Olvaenian Ivysaur,Poison,Ghost,Grass,Monster
+Phophasaur,Poison,Ghost,Grass,Monster
+Olvaenian Charmander,Fire,None,Monster,Dragon
+Olvaenian Charmeleon,Fire,Dark,Monster,Dragon
+Charkodile,Fire,Dark,Monster,Dragon
+Olvaenian Squirtle,Water,None,Amphibious,Monster
+Olvaenian Wartortle,Water,Ice,Amphibious,Monster
+Duratoise,Water,Ice,Amphibious,Monster
+Larvitar,Rock,Ground,Monster,None
+Pupitar,Rock,Ground,Monster,None
+Tyranitar,Rock,Dragon,Monster,None
+Dreepy,Ghost,Dragon,Dragon,Amorphous
+Drakloak,Ghost,Dragon,Dragon,Amorphous
+Dragapult,Ghost,Dragon,Dragon,Amorphous
+Olvaenian Dratini,Electric,Water,Amphibious,Dragon
+Olvaenian Dragonair,Electric,Water,Amphibious,Dragon
+Dragonance,Electric,Dragon,Amphibious,Dragon
+Druttox,Dragon,None,Dragon,Monster
+Drigettox,Dragon,Poison,Dragon,Monster
+Dragurtox,Dragon,Poison,Dragon,Monster
+Pestuzzi,Water,None,Seadwelling,Monster
+Pestocca,Water,Steel,Seadwelling,Monster
+Pescadina,Water,Steel,Seadwelling,Monster
+Bumbino,Fairy,None,Anthropomorphic,Fairy
+Balleteen,Fairy,None,Anthropomorphic,Fairy
+Crescudult,Fairy,Ice,Anthropomorphic,Fairy

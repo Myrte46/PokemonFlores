@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmm4rq71bd3qx"]
+
+[ext_resource type="PackedScene" uid="uid://s2yx0metoltr" path="res://Tools/Terrain Generation/Ground.tscn" id="2_5yl0e"]
+[ext_resource type="PackedScene" uid="uid://cpgfpfrja8c7u" path="res://Tools/Terrain Generation/Slope.tscn" id="2_kbvf7"]
+
+[node name="Gridmap" type="Node3D"]
+
+[node name="Ground" parent="." instance=ExtResource("2_5yl0e")]
+
+[node name="Slope" parent="." instance=ExtResource("2_kbvf7")]

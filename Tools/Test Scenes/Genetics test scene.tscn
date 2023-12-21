@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://bpebhu3tablyl"]
+
+[node name="Genetics test scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="BasicInfo" type="GridContainer" parent="GridContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 5
+
+[node name="Name" type="Panel" parent="GridContainer2/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NameLabel" type="Label" parent="GridContainer2/BasicInfo/Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="Species" type="Panel" parent="GridContainer2/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SpeciesLabel" type="Label" parent="GridContainer2/BasicInfo/Species"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Type1" type="Panel" parent="GridContainer2/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Type1Label" type="Label" parent="GridContainer2/BasicInfo/Type1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Type2" type="Panel" parent="GridContainer2/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Type2Label" type="Label" parent="GridContainer2/BasicInfo/Type2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ability" type="Panel" parent="GridContainer2/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AbilityLabel" type="Label" parent="GridContainer2/BasicInfo/Ability"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stats" type="GridContainer" parent="GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="OffensiveContainer" type="Panel" parent="GridContainer2/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OffensiveLabel" type="RichTextLabel" parent="GridContainer2/Stats/OffensiveContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DefensiveContainer" type="Panel" parent="GridContainer2/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DefensiveLabel" type="RichTextLabel" parent="GridContainer2/Stats/DefensiveContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatusContainer" type="Panel" parent="GridContainer2/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatusLabel" type="RichTextLabel" parent="GridContainer2/Stats/StatusContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer2/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BloodContainer" type="Panel" parent="GridContainer2/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BloodLabel" type="RichTextLabel" parent="GridContainer2/Stats/GridContainer/BloodContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AlleleContainer" type="Panel" parent="GridContainer2/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AlleleLabel" type="RichTextLabel" parent="GridContainer2/Stats/GridContainer/AlleleContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="GridContainer" parent="GridContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 5
+
+[node name="SaveButton" type="Button" parent="GridContainer2/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Save Pokemon"
+
+[node name="ListButton" type="Button" parent="GridContainer2/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Go To List"
+
+[node name="RandomizeButton" type="Button" parent="GridContainer2/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Randomize!"
+
+[node name="AncestryButton" type="Button" parent="GridContainer2/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Show Ancestry"
+
+[node name="BackButton" type="Button" parent="GridContainer2/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Back"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm4wmnpww0p3e"]
+
+[ext_resource type="Script" path="res://Scripts/JSON/FileManager.cs" id="1_wblk6"]
+[ext_resource type="PackedScene" uid="uid://bnr7mcg2gedb2" path="res://addons/UUID/UUID.tscn" id="2_qak2n"]
+
+[node name="ProjectOverhead" type="Node"]
+script = ExtResource("1_wblk6")
+
+[node name="UUID" parent="." instance=ExtResource("2_qak2n")]
