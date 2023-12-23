@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnr7mcg2gedb2"]
-
-[ext_resource type="Script" path="res://addons/UUID/UUID.gd" id="1_xbm4e"]
-
-[node name="UUID" type="Node"]
-script = ExtResource("1_xbm4e")

@@ -1,23 +1,26 @@
 using System;
 using Godot;
 
-public partial class SpeciesCreation : Node
+public static class SpeciesCreation
 {
-	string Types;
-	string Status;
-	string Species;
+	static string Types;
+	static string Status;
+	static string Species;
 
-	int TypeAmount = 20;
-	int StatusAmount = 5;
-	int FullStatusAmount = 8;
-	int SpeciesAmount = 261;
+	static readonly int TypeAmount = 20;
+	static readonly int StatusAmount = 5;
+	static readonly int FullStatusAmount = 8;
+	public static readonly int SpeciesAmount = 261;
 
-	int[,] FinalTypeArray;
-	int[,] FinalStatusArray;
-	public string[,] FinalSpeciesArray;
+	static int[,] FinalTypeArray;
+	static int[,] FinalStatusArray;
+	public static string[,] FinalSpeciesArray;
 
-	public Species[] CreateAllSpecies()
+	public static Species[] CreateAllSpecies()
 	{
+		DirAccess.MakeDirAbsolute(FileManager.PokemonPath);
+		DirAccess.MakeDirAbsolute(FileManager.TempPath);
+		DirAccess.MakeDirAbsolute(FileManager.SpeciesPath);
 
 		Types = FileManager.ReadCSV("res://Scripts/CSV Data/Types.csv");
 		Status = FileManager.ReadCSV("res://Scripts/CSV Data/Status.csv");
@@ -87,7 +90,7 @@ public partial class SpeciesCreation : Node
 
 		return Result;
 	}
-	public int[] CreateOffensive(Lists.Type Type1, Lists.Type Type2)
+	public static int[] CreateOffensive(Lists.Type Type1, Lists.Type Type2)
 	{
 		int Type1Int = (int)Type1;
 		int Type2Int = (int)Type2;
@@ -111,7 +114,7 @@ public partial class SpeciesCreation : Node
 		return offense;
 	}
 
-	public int[] CreateDefensive(Lists.Type Type1, Lists.Type Type2)
+	public static int[] CreateDefensive(Lists.Type Type1, Lists.Type Type2)
 	{
 		int Type1Int = (int)Type1;
 		int Type2Int = (int)Type2;
@@ -143,7 +146,7 @@ public partial class SpeciesCreation : Node
 		return defense;
 	}
 
-	public int[] CreateStatus(Lists.Type Type1, Lists.Type Type2)
+	public static int[] CreateStatus(Lists.Type Type1, Lists.Type Type2)
 	{
 		int Type1Int = (int)Type1;
 		int Type2Int = (int)Type2;

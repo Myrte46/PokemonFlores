@@ -1,87 +1,139 @@
-using System.IO;
+using System.Collections.Generic;
 using Godot;
 using Newtonsoft.Json;
 
-public partial class FileManager : Node
+public static class FileManager
 {
-	// Create a field for the save file.
-	string saveFile;
-	string path;
-	public string PokemonPath;
-	public string SpeciesPath;
+    static readonly string path = "user://";
+    public static readonly string PokemonPath = path + "Pokemon/";
+    public static readonly string TempPath = PokemonPath + "Temp/";
+    public static readonly string SpeciesPath = path + "Species/";
 
-	public override void _Ready()
-	{
-		// Update the path once the persistent path exists.
-		path = "user://";
-		PokemonPath = path + "pokemon";
-		SpeciesPath = path + "species.json";
-		SpeciesCreation speciesCreation = new();
-		WriteSpeciesJson(SpeciesPath, speciesCreation.CreateAllSpecies());
-	}
 
-	public static string ReadCSV(string filePath)
-	{
-		if (Godot.FileAccess.FileExists(filePath))
-		{
-			Godot.FileAccess dataFile = Godot.FileAccess.Open(filePath, Godot.FileAccess.ModeFlags.Read);
-			string parsedResult = dataFile.GetAsText();
+    public static string ReadCSV(string filePath)
+    {
+        if (FileAccess.FileExists(filePath))
+        {
+            FileAccess dataFile = FileAccess.Open(filePath, FileAccess.ModeFlags.Read);
+            string parsedResult = dataFile.GetAsText();
+            dataFile.Close();
 
-			if (parsedResult != null)
-			{
-				return parsedResult;
-			}
-			else
-			{
-				GD.PrintErr("Cannot read" + filePath);
-				return null;
-			}
-		}
-		else
-		{
-			GD.PrintErr("File Doesn't Exist");
-			return null;
-		}
-	}
+            if (parsedResult != null)
+            {
+                return parsedResult;
+            }
+            else
+            {
+                GD.PrintErr("Cannot read" + filePath);
+                return null;
+            }
+        }
+        else
+        {
+            GD.PrintErr("File Doesn't Exist");
+            return null;
+        }
+    }
 
-	public static Species[] ReadSpeciesJson(string filePath)
-	{
-		if (Godot.FileAccess.FileExists(filePath))
-		{
-			Godot.FileAccess dataFile = Godot.FileAccess.Open(filePath, Godot.FileAccess.ModeFlags.Read);
-			Wrapper<Species> wrapper = JsonConvert.DeserializeObject<Wrapper<Species>>(dataFile.GetAsText());
-			Species[] parsedResult = wrapper.Items;
+    public static void WritePokemon(string filePath, Pokemon pokemon)
+    {
+        string savePath = filePath + pokemon.uuid + ".json";
+        FileAccess dataFile = FileAccess.Open(savePath, FileAccess.ModeFlags.Write);
+        dataFile.StoreLine(JsonConvert.SerializeObject(pokemon));
+        dataFile.Close();
+    }
 
-			if (parsedResult != null)
-			{
-				return parsedResult;
-			}
-			else
-			{
-				GD.PrintErr("Cannot read" + filePath);
-				return null;
-			}
-		}
-		else
-		{
-			GD.PrintErr("File Doesn't Exist");
-			return null;
-		}
-	}
+    public static Pokemon ReadPokemon(string uuid)
+    {
+        Pokemon parsedResult;
 
-	public static void WriteSpeciesJson(string filePath, Species[] data)
-	{
-		Wrapper<Species> wrapper = new Wrapper<Species>
-		{
-			Items = data
-		};
+        if (FileAccess.FileExists(TempPath + uuid + ".json"))
+        {
+            FileAccess dataFile = FileAccess.Open(TempPath + uuid + ".json", FileAccess.ModeFlags.Read);
+            parsedResult = JsonConvert.DeserializeObject<Pokemon>(dataFile.GetAsText());
+            dataFile.Close();
+        }
+        else if (FileAccess.FileExists(PokemonPath + uuid + ".json"))
+        {
+            FileAccess dataFile = FileAccess.Open(PokemonPath + uuid + ".json", FileAccess.ModeFlags.Read);
+            parsedResult = JsonConvert.DeserializeObject<Pokemon>(dataFile.GetAsText());
+            dataFile.Close();
+        }
+        else
+        {
+            GD.PrintErr("File Doesn't Exist");
+            return null;
+        }
 
-		Godot.FileAccess dataFile = Godot.FileAccess.Open(filePath, Godot.FileAccess.ModeFlags.Write);
+        if (parsedResult != null)
+        {
+            return parsedResult;
+        }
+        else
+        {
+            GD.PrintErr("Cannot read path");
+            return null;
+        }
+    }
 
-		dataFile.StoreLine(JsonConvert.SerializeObject(wrapper));
-	}
-	public class Wrapper<T>
-	{
-		public T[] Items;
-	}
+    public static Species[] ReadSpeciesJson(string SpeciesPath = "user://Species/")
+    {
+        List<Species> species = new();
+        string[] SpeciesName = DirAccess.GetFilesAt(SpeciesPath);
+        foreach (string Name in SpeciesName)
+        {
+            if (FileAccess.FileExists(SpeciesPath + Name))
+            {
+                FileAccess dataFile = FileAccess.Open(SpeciesPath + Name, FileAccess.ModeFlags.Read);
+                Species parsedResult = JsonConvert.DeserializeObject<Species>(dataFile.GetLine());
+                dataFile.Close();
+
+                if (parsedResult != null)
+                {
+                    species.Add(parsedResult);
+                }
+                else
+                {
+                    GD.PrintErr("Cannot read " + SpeciesPath + Name);
+                }
+            }
+            else
+            {
+                GD.PrintErr("File Doesn't Exist");
+            }
+        }
+
+        return species.ToArray();
+
+    }
+
+    public static void WriteSpeciesJson(Species[] data, string filePath = "user://Species/")
+    {
+        foreach (Species species in data)
+        {
+            FileAccess dataFile = FileAccess.Open(filePath + species.Name + ".json", FileAccess.ModeFlags.Write);
+            dataFile.StoreLine(JsonConvert.SerializeObject(species));
+            dataFile.Close();
+        }
+
+    }
+
+    public class Wrapper<T>
+    {
+        public T[] Items;
+    }
+
+    public static string UUID()
+    {
+        string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+        int outputLength = 16;
+        string output = "";
+
+        for (int i = 0; i < outputLength; i++)
+        {
+            output += chars[(int)new RandomNumberGenerator().RandfRange(0, chars.Length)];
+        }
+
+        return output;
+    }
 }

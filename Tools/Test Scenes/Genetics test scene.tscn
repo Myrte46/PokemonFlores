@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bpebhu3tablyl"]
+[gd_scene load_steps=3 format=3 uid="uid://bpebhu3tablyl"]
+
+[ext_resource type="Script" path="res://Scripts/Pokemon/PokemonReader.cs" id="1_b4la6"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/RandomizeButton.cs" id="2_7xj6f"]
 
 [node name="Genetics test scene" type="Control"]
 layout_mode = 3
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b4la6")
 
 [node name="GridContainer2" type="GridContainer" parent="."]
 layout_mode = 0
@@ -188,6 +192,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Randomize!"
+script = ExtResource("2_7xj6f")
 
 [node name="AncestryButton" type="Button" parent="GridContainer2/Buttons"]
 layout_mode = 2

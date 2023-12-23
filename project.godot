@@ -14,17 +14,13 @@ config/name="Project Flores"
 run/main_scene="res://Tools/Test Scenes/Overworld Test Scene.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 
-[autoload]
-
-ProjectOverhead="*res://Scripts/JSON/ProjectOverhead.tscn"
-
 [dotnet]
 
 project/assembly_name="Project Flores"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/UUID/plugin.cfg", "res://addons/csv-data-importer/plugin.cfg")
+enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
 
 [input]
 
