@@ -8,12 +8,23 @@ public partial class RandomizeButton : Button
 	{
 		pokemonReader = GetNode<PokemonReader>("/root/Genetics test scene");
 		FileManager.WriteSpeciesJson(SpeciesCreation.CreateAllSpecies());
+		RandomizedWildPokemon.FillDictionary();
+
+		DelayedReady();
+	}
+
+	async void DelayedReady()
+	{
+		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
+		FileManager.DeleteTempFiles();
+		Pokemon pokemon = RandomizedWildPokemon.CreateWildPokemon();
+		pokemonReader.ReadPokemon(pokemon);
 	}
 
 	public override void _Pressed()
 	{
+		FileManager.DeleteTempFiles();
 		Pokemon pokemon = RandomizedWildPokemon.CreateWildPokemon();
-		GD.Print(pokemon);
 		pokemonReader.ReadPokemon(pokemon);
 	}
 }

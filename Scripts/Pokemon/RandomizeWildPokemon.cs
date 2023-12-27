@@ -13,7 +13,6 @@ public static class RandomizedWildPokemon
 
 	public static Pokemon CreateWildPokemon()
 	{
-		FillDictionary();
 		Pokemon pokemon = new()
 		{
 			Species = AllSpecies[(int)new RandomNumberGenerator().RandfRange(0.0f, AllSpecies.Length)]
@@ -334,7 +333,7 @@ public static class RandomizedWildPokemon
 
 	}
 
-	static void FillDictionary()
+	public static void FillDictionary()
 	{
 		for (int i = 0; i < Enum.GetValues(typeof(Lists.EggGroup)).Length - 1; i++)
 		{

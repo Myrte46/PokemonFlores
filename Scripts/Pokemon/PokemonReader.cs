@@ -35,9 +35,9 @@ public partial class PokemonReader : Node
 		Type1.Text = pokemon.Species.Type1.ToString();
 		Type2.Text = pokemon.Species.Type2.ToString();
 		Ability.Text = pokemon.Ability.ToString();
-		Offensive.Text = ReadTypeLists("<b>Offensive:\n</b>", pokemon.Offensive);
-		Defensive.Text = ReadTypeLists("<b>Defensive:\n</b>", pokemon.Defensive);
-		Status.Text = ReadStatusLists("<b>Status Suseptability:\n</b>", pokemon.Status);
+		Offensive.Text = ReadTypeLists("[b]Offensive:[/b]\n", pokemon.Offensive);
+		Defensive.Text = ReadTypeLists("[b]Defensive:[/b]\n", pokemon.Defensive);
+		Status.Text = ReadStatusLists("[b]Status Suseptability:[/b]\n", pokemon.Status);
 		BloodTypes.Text = ReadBlood(pokemon.MajorBlood, pokemon.MinorBlood);
 		Allele.Text = ReadAllele(pokemon.ApexAllele, pokemon.ShinyAllele);
 	}
@@ -74,7 +74,7 @@ public partial class PokemonReader : Node
 
 	string ReadBlood(List<Lists.Type> MajorBlood, List<Lists.Type> MinorBlood)
 	{
-		string Return = new string("<b>Major Blood:\n</b>");
+		string Return = new string("[b]Major Blood:\n[/b]");
 
 		for (int i = 0; i < MajorBlood.Count; i++)
 		{
@@ -84,7 +84,7 @@ public partial class PokemonReader : Node
 
 		if (MinorBlood.Count != 0)
 		{
-			Return += "\n<b>Minor Blood:</b>\n";
+			Return += "\n[b]Minor Blood:[/b]\n";
 		}
 
 		for (int i = 0; i < MinorBlood.Count; i++)
