@@ -15,6 +15,7 @@ public static class RandomizedWildPokemon
 	{
 		Pokemon pokemon = new()
 		{
+			uuid = FileManager.UUID(),
 			Species = AllSpecies[(int)new RandomNumberGenerator().RandfRange(0.0f, AllSpecies.Length)]
 		};
 
@@ -219,6 +220,7 @@ public static class RandomizedWildPokemon
 	{
 		Pokemon ChildPokemon = new()
 		{
+			uuid = FileManager.UUID(),
 			Parents = new string[2],
 			Offensive = new int[Parent1.Offensive.Length],
 			Defensive = new int[Parent1.Defensive.Length],

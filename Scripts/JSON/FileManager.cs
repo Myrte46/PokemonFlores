@@ -43,6 +43,22 @@ public static class FileManager
 		dataFile.Close();
 	}
 
+	public static void MovePokemon(string oldPath, string newPath, string pokemonUUID)
+	{
+		DirAccess newDir = DirAccess.Open(newPath);
+		string oldFile = oldPath + pokemonUUID + ".json";
+		string newFile = newPath + pokemonUUID + ".json";
+		if (!newDir.FileExists(newFile))
+		{
+			newDir.Copy(oldFile, newFile);
+		}
+		else
+		{
+			GD.PrintErr("File already exists");
+			return;
+		}
+	}
+
 	public static Pokemon ReadPokemon(string uuid)
 	{
 		Pokemon parsedResult;

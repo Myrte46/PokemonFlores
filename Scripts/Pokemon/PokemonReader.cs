@@ -16,21 +16,21 @@ public partial class PokemonReader : Node
 
 	public override void _Ready()
 	{
-		PokemonName = GetNode<Label>("GridContainer2/BasicInfo/Name/NameLabel");
-		Species = GetNode<Label>("GridContainer2/BasicInfo/Species/SpeciesLabel");
-		Type1 = GetNode<Label>("GridContainer2/BasicInfo/Type1/Type1Label");
-		Type2 = GetNode<Label>("GridContainer2/BasicInfo/Type2/Type2Label");
-		Ability = GetNode<Label>("GridContainer2/BasicInfo/Ability/AbilityLabel");
-		Offensive = GetNode<RichTextLabel>("GridContainer2/Stats/OffensiveContainer/OffensiveLabel");
-		Defensive = GetNode<RichTextLabel>("GridContainer2/Stats/DefensiveContainer/DefensiveLabel");
-		Status = GetNode<RichTextLabel>("GridContainer2/Stats/StatusContainer/StatusLabel");
-		BloodTypes = GetNode<RichTextLabel>("GridContainer2/Stats/GridContainer/BloodContainer/BloodLabel");
-		Allele = GetNode<RichTextLabel>("GridContainer2/Stats/GridContainer/AlleleContainer/AlleleLabel");
+		PokemonName = GetNode<Label>("Main/BasicInfo/Name/NameLabel");
+		Species = GetNode<Label>("Main/BasicInfo/Species/SpeciesLabel");
+		Type1 = GetNode<Label>("Main/BasicInfo/Type1/Type1Label");
+		Type2 = GetNode<Label>("Main/BasicInfo/Type2/Type2Label");
+		Ability = GetNode<Label>("Main/BasicInfo/Ability/AbilityLabel");
+		Offensive = GetNode<RichTextLabel>("Main/Stats/OffensiveContainer/OffensiveLabel");
+		Defensive = GetNode<RichTextLabel>("Main/Stats/DefensiveContainer/DefensiveLabel");
+		Status = GetNode<RichTextLabel>("Main/Stats/StatusContainer/StatusLabel");
+		BloodTypes = GetNode<RichTextLabel>("Main/Stats/GridContainer/BloodContainer/BloodLabel");
+		Allele = GetNode<RichTextLabel>("Main/Stats/GridContainer/AlleleContainer/AlleleLabel");
 	}
 
 	public void ReadPokemon(Pokemon pokemon)
 	{
-		PokemonName.Text = pokemon.Name;
+		PokemonName.Text = pokemon.uuid;
 		Species.Text = pokemon.Species.Name;
 		Type1.Text = pokemon.Species.Type1.ToString();
 		Type2.Text = pokemon.Species.Type2.ToString();

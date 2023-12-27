@@ -13,23 +13,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b4la6")
 
-[node name="GridContainer2" type="GridContainer" parent="."]
+[node name="Main" type="GridContainer" parent="."]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="BasicInfo" type="GridContainer" parent="GridContainer2"]
+[node name="BasicInfo" type="GridContainer" parent="Main"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 5
 
-[node name="Name" type="Panel" parent="GridContainer2/BasicInfo"]
+[node name="Name" type="Panel" parent="Main/BasicInfo"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="NameLabel" type="Label" parent="GridContainer2/BasicInfo/Name"]
+[node name="NameLabel" type="Label" parent="Main/BasicInfo/Name"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,12 +39,12 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Species" type="Panel" parent="GridContainer2/BasicInfo"]
+[node name="Species" type="Panel" parent="Main/BasicInfo"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SpeciesLabel" type="Label" parent="GridContainer2/BasicInfo/Species"]
+[node name="SpeciesLabel" type="Label" parent="Main/BasicInfo/Species"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,12 +54,12 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Type1" type="Panel" parent="GridContainer2/BasicInfo"]
+[node name="Type1" type="Panel" parent="Main/BasicInfo"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Type1Label" type="Label" parent="GridContainer2/BasicInfo/Type1"]
+[node name="Type1Label" type="Label" parent="Main/BasicInfo/Type1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,12 +69,12 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Type2" type="Panel" parent="GridContainer2/BasicInfo"]
+[node name="Type2" type="Panel" parent="Main/BasicInfo"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Type2Label" type="Label" parent="GridContainer2/BasicInfo/Type2"]
+[node name="Type2Label" type="Label" parent="Main/BasicInfo/Type2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,12 +84,12 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Ability" type="Panel" parent="GridContainer2/BasicInfo"]
+[node name="Ability" type="Panel" parent="Main/BasicInfo"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="AbilityLabel" type="Label" parent="GridContainer2/BasicInfo/Ability"]
+[node name="AbilityLabel" type="Label" parent="Main/BasicInfo/Ability"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,18 +99,18 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Stats" type="GridContainer" parent="GridContainer2"]
+[node name="Stats" type="GridContainer" parent="Main"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 4
 
-[node name="OffensiveContainer" type="Panel" parent="GridContainer2/Stats"]
+[node name="OffensiveContainer" type="Panel" parent="Main/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="OffensiveLabel" type="RichTextLabel" parent="GridContainer2/Stats/OffensiveContainer"]
+[node name="OffensiveLabel" type="RichTextLabel" parent="Main/Stats/OffensiveContainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,12 +119,12 @@ grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 
-[node name="DefensiveContainer" type="Panel" parent="GridContainer2/Stats"]
+[node name="DefensiveContainer" type="Panel" parent="Main/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="DefensiveLabel" type="RichTextLabel" parent="GridContainer2/Stats/DefensiveContainer"]
+[node name="DefensiveLabel" type="RichTextLabel" parent="Main/Stats/DefensiveContainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,12 +133,12 @@ grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 
-[node name="StatusContainer" type="Panel" parent="GridContainer2/Stats"]
+[node name="StatusContainer" type="Panel" parent="Main/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="StatusLabel" type="RichTextLabel" parent="GridContainer2/Stats/StatusContainer"]
+[node name="StatusLabel" type="RichTextLabel" parent="Main/Stats/StatusContainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -147,17 +147,17 @@ grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 
-[node name="GridContainer" type="GridContainer" parent="GridContainer2/Stats"]
+[node name="GridContainer" type="GridContainer" parent="Main/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="BloodContainer" type="Panel" parent="GridContainer2/Stats/GridContainer"]
+[node name="BloodContainer" type="Panel" parent="Main/Stats/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="BloodLabel" type="RichTextLabel" parent="GridContainer2/Stats/GridContainer/BloodContainer"]
+[node name="BloodLabel" type="RichTextLabel" parent="Main/Stats/GridContainer/BloodContainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,12 +166,12 @@ grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 
-[node name="AlleleContainer" type="Panel" parent="GridContainer2/Stats/GridContainer"]
+[node name="AlleleContainer" type="Panel" parent="Main/Stats/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="AlleleLabel" type="RichTextLabel" parent="GridContainer2/Stats/GridContainer/AlleleContainer"]
+[node name="AlleleLabel" type="RichTextLabel" parent="Main/Stats/GridContainer/AlleleContainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -180,13 +180,13 @@ grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 
-[node name="Buttons" type="GridContainer" parent="GridContainer2"]
+[node name="Buttons" type="GridContainer" parent="Main"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 5
 
-[node name="SaveButton" type="Button" parent="GridContainer2/Buttons"]
+[node name="SaveButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -194,14 +194,14 @@ theme_override_font_sizes/font_size = 30
 text = "Save Pokemon"
 script = ExtResource("2_ux3wi")
 
-[node name="ListButton" type="Button" parent="GridContainer2/Buttons"]
+[node name="ListButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Go To List"
 
-[node name="RandomizeButton" type="Button" parent="GridContainer2/Buttons"]
+[node name="RandomizeButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -209,16 +209,88 @@ theme_override_font_sizes/font_size = 30
 text = "Randomize!"
 script = ExtResource("2_7xj6f")
 
-[node name="AncestryButton" type="Button" parent="GridContainer2/Buttons"]
+[node name="AncestryButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Show Ancestry"
 
-[node name="BackButton" type="Button" parent="GridContainer2/Buttons"]
+[node name="BackButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Back"
+
+[node name="Popups" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NamePokemon" type="Panel" parent="Popups"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Popups/NamePokemon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Popups/NamePokemon/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Fill out your pokemon's name here!"
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+
+[node name="Label" type="Label" parent="Popups/NamePokemon/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Are you sure you want to save?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Popups/NamePokemon/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="Button" type="Button" parent="Popups/NamePokemon/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Yes"
+
+[node name="Button2" type="Button" parent="Popups/NamePokemon/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "No"
+
+[connection signal="PokemonUUIDChanged" from="Main/Buttons/RandomizeButton" to="Main/Buttons/SaveButton" method="_on_randomize_button_pokemon_uuid_changed"]

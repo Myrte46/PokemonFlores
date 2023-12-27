@@ -1,15 +1,23 @@
 using Godot;
-using System;
 
 public partial class SaveButton : Button
 {
-	// Called when the node enters the scene tree for the first time.
+	RandomizeButton randomizeButton;
+	string pokemonUUID;
+
 	public override void _Ready()
 	{
+		randomizeButton = GetNode<RandomizeButton>("/root/Genetics test scene/Main/Buttons/RandomizeButton");
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _Pressed()
 	{
+		FileManager.MovePokemon(FileManager.TempPath, FileManager.PokemonPath, pokemonUUID);
+		randomizeButton.RandomizePokemon();
+	}
+
+	public void _on_randomize_button_pokemon_uuid_changed(string pokemonUUID)
+	{
+		this.pokemonUUID = pokemonUUID;
 	}
 }

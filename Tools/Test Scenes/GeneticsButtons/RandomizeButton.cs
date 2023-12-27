@@ -3,6 +3,10 @@ using Godot;
 public partial class RandomizeButton : Button
 {
 	PokemonReader pokemonReader;
+	public string pokemonUUID;
+
+	[Signal]
+	public delegate void PokemonUUIDChangedEventHandler(string pokemonUUID);
 
 	public override void _Ready()
 	{
@@ -16,15 +20,19 @@ public partial class RandomizeButton : Button
 	async void DelayedReady()
 	{
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
-		FileManager.DeleteTempFiles();
-		Pokemon pokemon = RandomizedWildPokemon.CreateWildPokemon();
-		pokemonReader.ReadPokemon(pokemon);
+		RandomizePokemon();
 	}
 
 	public override void _Pressed()
 	{
+		RandomizePokemon();
+	}
+
+	public void RandomizePokemon(){
 		FileManager.DeleteTempFiles();
 		Pokemon pokemon = RandomizedWildPokemon.CreateWildPokemon();
+		FileManager.WritePokemon(FileManager.TempPath, pokemon);
 		pokemonReader.ReadPokemon(pokemon);
+		EmitSignal(SignalName.PokemonUUIDChanged, pokemon.uuid);
 	}
 }
