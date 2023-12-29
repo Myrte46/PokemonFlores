@@ -1,2 +1,3 @@
 Pokemon fangame in godot: https://www.youtube.com/watch?v=jSv5sGpnFso&list=PLY1jY0hbmKxAya3z6YBuQ3gGNB6Sg137r
 Gridmap 3d: https://www.youtube.com/watch?v=JxbnStn-BIY
+Dialogue system: https://www.youtube.com/watch?v=vY0Sk93YUhA

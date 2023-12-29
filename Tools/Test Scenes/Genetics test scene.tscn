@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpebhu3tablyl"]
+[gd_scene load_steps=6 format=3 uid="uid://bpebhu3tablyl"]
 
 [ext_resource type="Script" path="res://Scripts/Pokemon/PokemonReader.cs" id="1_b4la6"]
 [ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/RandomizeButton.cs" id="2_7xj6f"]
-[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/SaveButton.cs" id="2_ux3wi"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/YesButton.cs" id="2_tgn2c"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/NamePokemon.cs" id="3_y0k7m"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/TextEdit.cs" id="4_tdli2"]
 
 [node name="Genetics test scene" type="Control"]
 layout_mode = 3
@@ -192,7 +194,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Save Pokemon"
-script = ExtResource("2_ux3wi")
 
 [node name="ListButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
@@ -224,11 +225,12 @@ theme_override_font_sizes/font_size = 30
 text = "Back"
 
 [node name="Popups" type="Control" parent="."]
-visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -248,6 +250,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("3_y0k7m")
 
 [node name="GridContainer" type="GridContainer" parent="Popups/NamePokemon"]
 layout_mode = 1
@@ -266,6 +269,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
+script = ExtResource("4_tdli2")
 
 [node name="Label" type="Label" parent="Popups/NamePokemon/GridContainer"]
 layout_mode = 2
@@ -281,16 +285,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 2
 
-[node name="Button" type="Button" parent="Popups/NamePokemon/GridContainer/GridContainer"]
+[node name="YesButton" type="Button" parent="Popups/NamePokemon/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Yes"
+script = ExtResource("2_tgn2c")
 
-[node name="Button2" type="Button" parent="Popups/NamePokemon/GridContainer/GridContainer"]
+[node name="NoButton" type="Button" parent="Popups/NamePokemon/GridContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "No"
 
-[connection signal="PokemonUUIDChanged" from="Main/Buttons/RandomizeButton" to="Main/Buttons/SaveButton" method="_on_randomize_button_pokemon_uuid_changed"]
+[connection signal="pressed" from="Main/Buttons/SaveButton" to="Popups/NamePokemon" method="_on_save_button_pressed"]
+[connection signal="PokemonUUIDChanged" from="Main/Buttons/RandomizeButton" to="Popups/NamePokemon/GridContainer/GridContainer/YesButton" method="_on_randomize_button_pokemon_uuid_changed"]
+[connection signal="ChangedText" from="Popups/NamePokemon/GridContainer/TextEdit" to="Popups/NamePokemon/GridContainer/GridContainer/YesButton" method="_on_text_edit_changed_text"]
+[connection signal="text_changed" from="Popups/NamePokemon/GridContainer/TextEdit" to="Popups/NamePokemon/GridContainer/TextEdit" method="_on_text_changed"]
+[connection signal="SavedPokemon" from="Popups/NamePokemon/GridContainer/GridContainer/YesButton" to="Popups/NamePokemon" method="_on_yes_button_saved_pokemon"]
+[connection signal="pressed" from="Popups/NamePokemon/GridContainer/GridContainer/NoButton" to="Popups/NamePokemon" method="_on_no_button_pressed"]
