@@ -4,7 +4,7 @@ using Godot;
 
 public static class RandomizedWildPokemon
 {
-	static readonly Species[] AllSpecies = FileManager.ReadSpeciesJson();
+	static readonly Species[] AllSpecies = FileManager.ReadAllFilesJson<Species>(FileManager.SpeciesPath).ToArray();
 
 	static Dictionary<Lists.EggGroup, List<Species>> EggGroups = new();
 

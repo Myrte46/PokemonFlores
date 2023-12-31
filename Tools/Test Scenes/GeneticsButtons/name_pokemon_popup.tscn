@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://vme1j0fvuvuw"]
+
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/NamePokemon.cs" id="1_axwvr"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/TextEdit.cs" id="2_x3hyp"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/YesButton.cs" id="3_81vdv"]
+
+[node name="NamePokemon" type="Panel"]
+custom_minimum_size = Vector2(250, 250)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_axwvr")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Fill out your pokemon's name here!"
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+script = ExtResource("2_x3hyp")
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Are you sure you want to save?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="YesButton" type="Button" parent="GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Yes"
+script = ExtResource("3_81vdv")
+
+[node name="NoButton" type="Button" parent="GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "No"
+
+[connection signal="ChangedText" from="GridContainer/TextEdit" to="GridContainer/GridContainer/YesButton" method="_on_text_edit_changed_text"]
+[connection signal="text_changed" from="GridContainer/TextEdit" to="GridContainer/TextEdit" method="_on_text_changed"]
+[connection signal="SavedPokemon" from="GridContainer/GridContainer/YesButton" to="." method="_on_yes_button_saved_pokemon"]
+[connection signal="pressed" from="GridContainer/GridContainer/NoButton" to="." method="_on_no_button_pressed"]

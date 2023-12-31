@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpebhu3tablyl"]
+[gd_scene load_steps=7 format=3 uid="uid://bpebhu3tablyl"]
 
 [ext_resource type="Script" path="res://Scripts/Pokemon/PokemonReader.cs" id="1_b4la6"]
 [ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/RandomizeButton.cs" id="2_7xj6f"]
-[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/YesButton.cs" id="2_tgn2c"]
-[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/NamePokemon.cs" id="3_y0k7m"]
-[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/TextEdit.cs" id="4_tdli2"]
+[ext_resource type="PackedScene" uid="uid://dfr62krnflwgf" path="res://Tools/Test Scenes/GeneticsButtons/info_container.tscn" id="2_bcatl"]
+[ext_resource type="PackedScene" uid="uid://vme1j0fvuvuw" path="res://Tools/Test Scenes/GeneticsButtons/name_pokemon_popup.tscn" id="3_6qpe2"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/ListContainer.cs" id="3_diqvh"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/info_container.cs" id="3_oppjf"]
 
 [node name="Genetics test scene" type="Control"]
 layout_mode = 3
@@ -16,177 +17,29 @@ grow_vertical = 2
 script = ExtResource("1_b4la6")
 
 [node name="Main" type="GridContainer" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BasicInfo" type="GridContainer" parent="Main"]
+[node name="InfoContainer" parent="Main" instance=ExtResource("2_bcatl")]
+layout_mode = 2
+script = ExtResource("3_oppjf")
+
+[node name="ListContainer" type="GridContainer" parent="Main"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
+script = ExtResource("3_diqvh")
+
+[node name="Buttons" type="HBoxContainer" parent="Main"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
-columns = 5
-
-[node name="Name" type="Panel" parent="Main/BasicInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="NameLabel" type="Label" parent="Main/BasicInfo/Name"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Species" type="Panel" parent="Main/BasicInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="SpeciesLabel" type="Label" parent="Main/BasicInfo/Species"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Type1" type="Panel" parent="Main/BasicInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Type1Label" type="Label" parent="Main/BasicInfo/Type1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Type2" type="Panel" parent="Main/BasicInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Type2Label" type="Label" parent="Main/BasicInfo/Type2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Ability" type="Panel" parent="Main/BasicInfo"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="AbilityLabel" type="Label" parent="Main/BasicInfo/Ability"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Stats" type="GridContainer" parent="Main"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 4
-
-[node name="OffensiveContainer" type="Panel" parent="Main/Stats"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="OffensiveLabel" type="RichTextLabel" parent="Main/Stats/OffensiveContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-
-[node name="DefensiveContainer" type="Panel" parent="Main/Stats"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="DefensiveLabel" type="RichTextLabel" parent="Main/Stats/DefensiveContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-
-[node name="StatusContainer" type="Panel" parent="Main/Stats"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="StatusLabel" type="RichTextLabel" parent="Main/Stats/StatusContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-
-[node name="GridContainer" type="GridContainer" parent="Main/Stats"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="BloodContainer" type="Panel" parent="Main/Stats/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="BloodLabel" type="RichTextLabel" parent="Main/Stats/GridContainer/BloodContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-
-[node name="AlleleContainer" type="Panel" parent="Main/Stats/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="AlleleLabel" type="RichTextLabel" parent="Main/Stats/GridContainer/AlleleContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-
-[node name="Buttons" type="GridContainer" parent="Main"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-columns = 5
 
 [node name="SaveButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
@@ -217,13 +70,6 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Show Ancestry"
 
-[node name="BackButton" type="Button" parent="Main/Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-text = "Back"
-
 [node name="Popups" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -234,73 +80,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NamePokemon" type="Panel" parent="Popups"]
-custom_minimum_size = Vector2(250, 250)
+[node name="NamePokemon" parent="Popups" instance=ExtResource("3_6qpe2")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -125.0
-offset_right = 125.0
-offset_bottom = 125.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("3_y0k7m")
-
-[node name="GridContainer" type="GridContainer" parent="Popups/NamePokemon"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="Popups/NamePokemon/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-placeholder_text = "Fill out your pokemon's name here!"
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-script = ExtResource("4_tdli2")
-
-[node name="Label" type="Label" parent="Popups/NamePokemon/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Are you sure you want to save?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GridContainer" type="GridContainer" parent="Popups/NamePokemon/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 2
-
-[node name="YesButton" type="Button" parent="Popups/NamePokemon/GridContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Yes"
-script = ExtResource("2_tgn2c")
-
-[node name="NoButton" type="Button" parent="Popups/NamePokemon/GridContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "No"
 
 [connection signal="pressed" from="Main/Buttons/SaveButton" to="Popups/NamePokemon" method="_on_save_button_pressed"]
+[connection signal="pressed" from="Main/Buttons/ListButton" to="Main/InfoContainer" method="_on_list_button_pressed"]
+[connection signal="pressed" from="Main/Buttons/ListButton" to="Main/ListContainer" method="_on_list_button_pressed"]
 [connection signal="PokemonUUIDChanged" from="Main/Buttons/RandomizeButton" to="Popups/NamePokemon/GridContainer/GridContainer/YesButton" method="_on_randomize_button_pokemon_uuid_changed"]
-[connection signal="ChangedText" from="Popups/NamePokemon/GridContainer/TextEdit" to="Popups/NamePokemon/GridContainer/GridContainer/YesButton" method="_on_text_edit_changed_text"]
-[connection signal="text_changed" from="Popups/NamePokemon/GridContainer/TextEdit" to="Popups/NamePokemon/GridContainer/TextEdit" method="_on_text_changed"]
-[connection signal="SavedPokemon" from="Popups/NamePokemon/GridContainer/GridContainer/YesButton" to="Popups/NamePokemon" method="_on_yes_button_saved_pokemon"]
-[connection signal="pressed" from="Popups/NamePokemon/GridContainer/GridContainer/NoButton" to="Popups/NamePokemon" method="_on_no_button_pressed"]
+
+[editable path="Popups/NamePokemon"]

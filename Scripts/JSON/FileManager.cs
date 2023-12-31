@@ -92,25 +92,25 @@ public static class FileManager
 		}
 	}
 
-	public static Species[] ReadSpeciesJson(string SpeciesPath = "user://Species/")
+	public static List<T> ReadAllFilesJson<T>(string dirPath)
 	{
-		List<Species> species = new();
-		string[] FilePath = DirAccess.GetFilesAt(SpeciesPath);
-		foreach (string Name in FilePath)
+		List<T> items = new();
+		string[] filePath = DirAccess.GetFilesAt(dirPath);
+		foreach (string name in filePath)
 		{
-			if (FileAccess.FileExists(SpeciesPath + Name))
+			if (FileAccess.FileExists(dirPath + name))
 			{
-				FileAccess dataFile = FileAccess.Open(SpeciesPath + Name, FileAccess.ModeFlags.Read);
-				Species parsedResult = JsonConvert.DeserializeObject<Species>(dataFile.GetLine());
+				FileAccess dataFile = FileAccess.Open(dirPath + name, FileAccess.ModeFlags.Read);
+				T parsedResult = JsonConvert.DeserializeObject<T>(dataFile.GetLine());
 				dataFile.Close();
 
 				if (parsedResult != null)
 				{
-					species.Add(parsedResult);
+					items.Add(parsedResult);
 				}
 				else
 				{
-					GD.PrintErr("Cannot read " + SpeciesPath + Name);
+					GD.PrintErr("Cannot read " + dirPath + name);
 				}
 			}
 			else
@@ -119,8 +119,7 @@ public static class FileManager
 			}
 		}
 
-		return species.ToArray();
-
+		return items;
 	}
 
 	public static void DeleteTempFiles(string filePath = "user://Pokemon/Temp/")
