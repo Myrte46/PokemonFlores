@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpebhu3tablyl"]
 
 [ext_resource type="Script" path="res://Scripts/Pokemon/PokemonReader.cs" id="1_b4la6"]
-[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/RandomizeButton.cs" id="2_7xj6f"]
-[ext_resource type="PackedScene" uid="uid://dfr62krnflwgf" path="res://Tools/Test Scenes/GeneticsButtons/info_container.tscn" id="2_bcatl"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/MainController.cs" id="2_wn03w"]
 [ext_resource type="PackedScene" uid="uid://vme1j0fvuvuw" path="res://Tools/Test Scenes/GeneticsButtons/name_pokemon_popup.tscn" id="3_6qpe2"]
-[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/ListContainer.cs" id="3_diqvh"]
-[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/info_container.cs" id="3_oppjf"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/BreedingReader.cs" id="5_rm6ry"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/ListButton.cs" id="6_2i6bc"]
+[ext_resource type="Script" path="res://Tools/Test Scenes/GeneticsButtons/AncestryButton.cs" id="8_t6vjc"]
 
 [node name="Genetics test scene" type="Control"]
 layout_mode = 3
@@ -14,7 +14,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_b4la6")
 
 [node name="Main" type="GridContainer" parent="."]
 layout_mode = 1
@@ -24,9 +23,171 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InfoContainer" parent="Main" instance=ExtResource("2_bcatl")]
+[node name="InfoContainer" type="VBoxContainer" parent="Main"]
+visible = false
 layout_mode = 2
-script = ExtResource("3_oppjf")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BasicInfo" type="HBoxContainer" parent="Main/InfoContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Name" type="Panel" parent="Main/InfoContainer/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NameLabel" type="Label" parent="Main/InfoContainer/BasicInfo/Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Species" type="Panel" parent="Main/InfoContainer/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SpeciesLabel" type="Label" parent="Main/InfoContainer/BasicInfo/Species"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type1" type="Panel" parent="Main/InfoContainer/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Type1Label" type="Label" parent="Main/InfoContainer/BasicInfo/Type1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type2" type="Panel" parent="Main/InfoContainer/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Type2Label" type="Label" parent="Main/InfoContainer/BasicInfo/Type2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ability" type="Panel" parent="Main/InfoContainer/BasicInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AbilityLabel" type="Label" parent="Main/InfoContainer/BasicInfo/Ability"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="GridContainer" parent="Main/InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="OffensiveContainer" type="Panel" parent="Main/InfoContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OffensiveLabel" type="RichTextLabel" parent="Main/InfoContainer/Stats/OffensiveContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="DefensiveContainer" type="Panel" parent="Main/InfoContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DefensiveLabel" type="RichTextLabel" parent="Main/InfoContainer/Stats/DefensiveContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="StatusContainer" type="Panel" parent="Main/InfoContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatusLabel" type="RichTextLabel" parent="Main/InfoContainer/Stats/StatusContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="GridContainer" type="GridContainer" parent="Main/InfoContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BloodContainer" type="Panel" parent="Main/InfoContainer/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BloodLabel" type="RichTextLabel" parent="Main/InfoContainer/Stats/GridContainer/BloodContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="AlleleContainer" type="Panel" parent="Main/InfoContainer/Stats/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AlleleLabel" type="RichTextLabel" parent="Main/InfoContainer/Stats/GridContainer/AlleleContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
 
 [node name="ListContainer" type="GridContainer" parent="Main"]
 visible = false
@@ -34,7 +195,134 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 5
-script = ExtResource("3_diqvh")
+
+[node name="AncestryContainer" type="VBoxContainer" parent="Main"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/AncestryContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Grandparent1" type="Button" parent="Main/AncestryContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grandparent2" type="Button" parent="Main/AncestryContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grandparent3" type="Button" parent="Main/AncestryContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Grandparent4" type="Button" parent="Main/AncestryContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Main/AncestryContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Parent1" type="Button" parent="Main/AncestryContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Parent2" type="Button" parent="Main/AncestryContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CurrentPokemon" type="Button" parent="Main/AncestryContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BreedContainer" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PickPokemon" type="HBoxContainer" parent="Main/BreedContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Parent1" type="OptionButton" parent="Main/BreedContainer/PickPokemon"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+allow_reselect = true
+
+[node name="Parent2" type="OptionButton" parent="Main/BreedContainer/PickPokemon"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+allow_reselect = true
+
+[node name="Panel" type="Panel" parent="Main/BreedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PokemonInfo" type="HBoxContainer" parent="Main/BreedContainer/Panel"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 181.0
+size_flags_vertical = 3
+
+[node name="Parent1" type="VBoxContainer" parent="Main/BreedContainer/Panel/PokemonInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Species" type="Label" parent="Main/BreedContainer/Panel/PokemonInfo/Parent1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/BreedContainer/Panel/PokemonInfo/Parent1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EggGroup1" type="Label" parent="Main/BreedContainer/Panel/PokemonInfo/Parent1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="EggGroup2" type="Label" parent="Main/BreedContainer/Panel/PokemonInfo/Parent1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Parent2" type="VBoxContainer" parent="Main/BreedContainer/Panel/PokemonInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Species" type="Label" parent="Main/BreedContainer/Panel/PokemonInfo/Parent2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/BreedContainer/Panel/PokemonInfo/Parent2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EggGroup1" type="Label" parent="Main/BreedContainer/Panel/PokemonInfo/Parent2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="EggGroup2" type="Label" parent="Main/BreedContainer/Panel/PokemonInfo/Parent2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="BreedButton" type="Button" parent="Main/BreedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Breed"
 
 [node name="Buttons" type="HBoxContainer" parent="Main"]
 custom_minimum_size = Vector2(0, 100)
@@ -53,7 +341,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
-text = "Go To List"
+text = "Show List"
+script = ExtResource("6_2i6bc")
 
 [node name="RandomizeButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
@@ -61,7 +350,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Randomize!"
-script = ExtResource("2_7xj6f")
 
 [node name="AncestryButton" type="Button" parent="Main/Buttons"]
 layout_mode = 2
@@ -69,6 +357,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Show Ancestry"
+script = ExtResource("8_t6vjc")
+
+[node name="BreedButton" type="Button" parent="Main/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Breed Pokemon"
 
 [node name="Popups" type="Control" parent="."]
 layout_mode = 1
@@ -83,9 +378,62 @@ grow_vertical = 2
 [node name="NamePokemon" parent="Popups" instance=ExtResource("3_6qpe2")]
 layout_mode = 1
 
+[node name="PokemonReader" type="Control" parent="." node_paths=PackedStringArray("PokemonName", "Species", "Type1", "Type2", "Ability", "Offensive", "Defensive", "Status", "BloodTypes", "Allele")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_b4la6")
+PokemonName = NodePath("../Main/InfoContainer/BasicInfo/Name/NameLabel")
+Species = NodePath("../Main/InfoContainer/BasicInfo/Species/SpeciesLabel")
+Type1 = NodePath("../Main/InfoContainer/BasicInfo/Type1/Type1Label")
+Type2 = NodePath("../Main/InfoContainer/BasicInfo/Type2/Type2Label")
+Ability = NodePath("../Main/InfoContainer/BasicInfo/Ability/AbilityLabel")
+Offensive = NodePath("../Main/InfoContainer/Stats/OffensiveContainer/OffensiveLabel")
+Defensive = NodePath("../Main/InfoContainer/Stats/DefensiveContainer/DefensiveLabel")
+Status = NodePath("../Main/InfoContainer/Stats/StatusContainer/StatusLabel")
+BloodTypes = NodePath("../Main/InfoContainer/Stats/GridContainer/BloodContainer/BloodLabel")
+Allele = NodePath("../Main/InfoContainer/Stats/GridContainer/AlleleContainer/AlleleLabel")
+
+[node name="BreedingReader" type="Control" parent="." node_paths=PackedStringArray("Parent1", "Parent2", "Parent1Species", "Parent1EggGroup1", "Parent1EggGroup2", "Parent2Species", "Parent2EggGroup1", "Parent2EggGroup2", "BreedButton")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_rm6ry")
+Parent1 = NodePath("../Main/BreedContainer/PickPokemon/Parent1")
+Parent2 = NodePath("../Main/BreedContainer/PickPokemon/Parent2")
+Parent1Species = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent1/Species")
+Parent1EggGroup1 = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent1/HBoxContainer/EggGroup1")
+Parent1EggGroup2 = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent1/HBoxContainer/EggGroup2")
+Parent2Species = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent2/Species")
+Parent2EggGroup1 = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent2/HBoxContainer/EggGroup1")
+Parent2EggGroup2 = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent2/HBoxContainer/EggGroup2")
+BreedButton = NodePath("../Main/BreedContainer/BreedButton")
+
+[node name="MainController" type="Control" parent="." node_paths=PackedStringArray("InfoContainer", "ListContainer", "AncestryContainer", "BreedContainer", "NamePokemonContainer", "yesButton", "pokemonReader", "breedingReader")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_wn03w")
+InfoContainer = NodePath("../Main/InfoContainer")
+ListContainer = NodePath("../Main/ListContainer")
+AncestryContainer = NodePath("../Main/AncestryContainer")
+BreedContainer = NodePath("../Main/BreedContainer")
+NamePokemonContainer = NodePath("../Popups/NamePokemon")
+yesButton = NodePath("../Popups/NamePokemon/GridContainer/GridContainer/YesButton")
+pokemonReader = NodePath("../PokemonReader")
+breedingReader = NodePath("../BreedingReader")
+
+[connection signal="item_selected" from="Main/BreedContainer/PickPokemon/Parent1" to="BreedingReader" method="_on_parent_1_item_selected"]
+[connection signal="item_selected" from="Main/BreedContainer/PickPokemon/Parent2" to="BreedingReader" method="_on_parent_2_item_selected"]
+[connection signal="pressed" from="Main/BreedContainer/BreedButton" to="BreedingReader" method="_on_breed_button_pressed"]
 [connection signal="pressed" from="Main/Buttons/SaveButton" to="Popups/NamePokemon" method="_on_save_button_pressed"]
-[connection signal="pressed" from="Main/Buttons/ListButton" to="Main/InfoContainer" method="_on_list_button_pressed"]
-[connection signal="pressed" from="Main/Buttons/ListButton" to="Main/ListContainer" method="_on_list_button_pressed"]
-[connection signal="PokemonUUIDChanged" from="Main/Buttons/RandomizeButton" to="Popups/NamePokemon/GridContainer/GridContainer/YesButton" method="_on_randomize_button_pokemon_uuid_changed"]
+[connection signal="pressed" from="Main/Buttons/SaveButton" to="MainController" method="_on_save_button_pressed"]
+[connection signal="pressed" from="Main/Buttons/ListButton" to="MainController" method="_on_list_button_pressed"]
+[connection signal="pressed" from="Main/Buttons/RandomizeButton" to="MainController" method="_on_randomize_button_pressed"]
+[connection signal="pressed" from="Main/Buttons/AncestryButton" to="MainController" method="_on_ancestry_button_pressed"]
+[connection signal="pressed" from="Main/Buttons/BreedButton" to="MainController" method="_on_breed_button_pressed"]
+[connection signal="SavedPokemon" from="Popups/NamePokemon/GridContainer/GridContainer/YesButton" to="MainController" method="_on_yes_button_saved_pokemon"]
+[connection signal="BreedingComplete" from="BreedingReader" to="Popups/NamePokemon" method="_on_breeding_reader_breeding_complete"]
+[connection signal="BreedingComplete" from="BreedingReader" to="Popups/NamePokemon/GridContainer/GridContainer/YesButton" method="_on_breeding_reader_breeding_complete"]
 
 [editable path="Popups/NamePokemon"]

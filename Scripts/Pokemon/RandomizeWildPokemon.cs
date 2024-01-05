@@ -126,7 +126,7 @@ public static class RandomizedWildPokemon
 		return Alleles;
 	}
 
-	static Pokemon BreedPokemon(Pokemon Parent1, Pokemon Parent2)
+	public static Pokemon BreedPokemon(Pokemon Parent1, Pokemon Parent2)
 	{
 		Pokemon ChildPokemon = new()
 		{
