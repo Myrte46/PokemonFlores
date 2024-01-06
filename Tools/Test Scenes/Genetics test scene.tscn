@@ -24,7 +24,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InfoContainer" type="VBoxContainer" parent="Main"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -239,6 +238,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="BreedContainer" type="VBoxContainer" parent="Main"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -247,13 +247,13 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Parent1" type="OptionButton" parent="Main/BreedContainer/PickPokemon"]
+[node name="Parent1Selector" type="OptionButton" parent="Main/BreedContainer/PickPokemon"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 allow_reselect = true
 
-[node name="Parent2" type="OptionButton" parent="Main/BreedContainer/PickPokemon"]
+[node name="Parent2Selector" type="OptionButton" parent="Main/BreedContainer/PickPokemon"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -399,8 +399,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_rm6ry")
-Parent1 = NodePath("../Main/BreedContainer/PickPokemon/Parent1")
-Parent2 = NodePath("../Main/BreedContainer/PickPokemon/Parent2")
+Parent1 = NodePath("../Main/BreedContainer/PickPokemon/Parent1Selector")
+Parent2 = NodePath("../Main/BreedContainer/PickPokemon/Parent2Selector")
 Parent1Species = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent1/Species")
 Parent1EggGroup1 = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent1/HBoxContainer/EggGroup1")
 Parent1EggGroup2 = NodePath("../Main/BreedContainer/Panel/PokemonInfo/Parent1/HBoxContainer/EggGroup2")
@@ -423,8 +423,8 @@ yesButton = NodePath("../Popups/NamePokemon/GridContainer/GridContainer/YesButto
 pokemonReader = NodePath("../PokemonReader")
 breedingReader = NodePath("../BreedingReader")
 
-[connection signal="item_selected" from="Main/BreedContainer/PickPokemon/Parent1" to="BreedingReader" method="_on_parent_1_item_selected"]
-[connection signal="item_selected" from="Main/BreedContainer/PickPokemon/Parent2" to="BreedingReader" method="_on_parent_2_item_selected"]
+[connection signal="item_selected" from="Main/BreedContainer/PickPokemon/Parent1Selector" to="BreedingReader" method="_on_parent_1_item_selected"]
+[connection signal="item_selected" from="Main/BreedContainer/PickPokemon/Parent2Selector" to="BreedingReader" method="_on_parent_2_item_selected"]
 [connection signal="pressed" from="Main/BreedContainer/BreedButton" to="BreedingReader" method="_on_breed_button_pressed"]
 [connection signal="pressed" from="Main/Buttons/SaveButton" to="Popups/NamePokemon" method="_on_save_button_pressed"]
 [connection signal="pressed" from="Main/Buttons/SaveButton" to="MainController" method="_on_save_button_pressed"]
@@ -432,8 +432,5 @@ breedingReader = NodePath("../BreedingReader")
 [connection signal="pressed" from="Main/Buttons/RandomizeButton" to="MainController" method="_on_randomize_button_pressed"]
 [connection signal="pressed" from="Main/Buttons/AncestryButton" to="MainController" method="_on_ancestry_button_pressed"]
 [connection signal="pressed" from="Main/Buttons/BreedButton" to="MainController" method="_on_breed_button_pressed"]
-[connection signal="SavedPokemon" from="Popups/NamePokemon/GridContainer/GridContainer/YesButton" to="MainController" method="_on_yes_button_saved_pokemon"]
-[connection signal="BreedingComplete" from="BreedingReader" to="Popups/NamePokemon" method="_on_breeding_reader_breeding_complete"]
-[connection signal="BreedingComplete" from="BreedingReader" to="Popups/NamePokemon/GridContainer/GridContainer/YesButton" method="_on_breeding_reader_breeding_complete"]
 
 [editable path="Popups/NamePokemon"]

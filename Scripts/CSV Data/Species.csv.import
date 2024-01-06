@@ -1,18 +1,3 @@
 [remap]
 
-importer="com.timothyqiu.godot-csv-importer"
-type="Resource"
-uid="uid://i704yil2t5e5"
-path="res://.godot/imported/Species.csv-861a8009eb193016360522cfb2314314.res"
-
-[deps]
-
-source_file="res://Scripts/CSV Data/Species.csv"
-dest_files=["res://.godot/imported/Species.csv-861a8009eb193016360522cfb2314314.res"]
-
-[params]
-
-delimiter=0
-headers=true
-detect_numbers=true
-force_float=true
+importer="keep"

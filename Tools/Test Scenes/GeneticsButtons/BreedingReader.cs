@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public partial class BreedingReader : Control
 {
 	[Export]
-	OptionButton Parent1;
+	OptionButton Parent1Reader;
 	[Export]
-	OptionButton Parent2;
+	OptionButton Parent2Reader;
 	[Export]
 	Label Parent1Species;
 	[Export]
@@ -33,8 +33,8 @@ public partial class BreedingReader : Control
 
 	public void EnableBreeding()
 	{
-		Parent1.Clear();
-		Parent2.Clear();
+		Parent1Reader.Clear();
+		Parent2Reader.Clear();
 		FileManager.ReadAllFilesJson<Pokemon>(FileManager.PokemonPath).ForEach(pokemon =>
 		{
 			pokemons.Add(pokemon);
@@ -42,8 +42,8 @@ public partial class BreedingReader : Control
 
 		pokemons.ForEach(pokemon =>
 		{
-			Parent1.AddItem(pokemon.Name);
-			Parent2.AddItem(pokemon.Name);
+			Parent1Reader.AddItem(pokemon.Name);
+			Parent2Reader.AddItem(pokemon.Name);
 		});
 
 		Parent1Pokemon = pokemons.ToArray()[0];
